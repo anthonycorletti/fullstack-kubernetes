@@ -1,0 +1,6 @@
+fastapi
+gunicorn
+hvac
+psycopg2
+pulsar-client==2.5.2
+uvicorn

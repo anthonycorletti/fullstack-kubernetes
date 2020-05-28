@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: fsk8s
+spec:
+  rules:
+    - http:
+        paths:
+          - backend:
+              serviceName: fsk8s-api
+              servicePort: 8088
+            path: /api
+          - backend:
+              serviceName: fsk8s-ui
+              servicePort: 5000
+            path: /

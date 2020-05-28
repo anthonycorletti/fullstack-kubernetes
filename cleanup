@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "☁️  cleaning up ..."
+
+gcloud container clusters delete "fsk8s" --quiet --verbosity error --region "us-central1-c"
+gcloud compute disks list --filter="name~'gke-fsk8s-.*'" | awk 'NR>1 {print $1}' | xargs -n1 gcloud compute disks delete --quiet --verbosity error --zone="us-central1-c"
+
+echo "☁️  done!"

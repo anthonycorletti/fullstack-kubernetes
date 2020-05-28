@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fsk8s-ui
+spec:
+  selector:
+    app: fsk8s-ui
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000

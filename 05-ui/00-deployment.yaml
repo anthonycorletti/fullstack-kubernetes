@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: fsk8s-ui
+  labels:
+    app: fsk8s-ui
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fsk8s-ui
+  template:
+    metadata:
+      labels:
+        app: fsk8s-ui
+    spec:
+      containers:
+      - name: fsk8s-ui
+        image: {{IMAGE}}
+        ports:
+        - containerPort: 5000
